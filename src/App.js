@@ -14,6 +14,7 @@ function App() {
       <Nav/>
       <Header/>
       <Feature/>
+      <Team/>
     </div>
   );
 }
