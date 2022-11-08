@@ -150,7 +150,13 @@ export const Feature = () => {
                     points="29 13 14 29 25 29 23 39 38 23 27 23"
                   />
                 </svg>
-              
+              </div>
+              <h6 className="mb-2 font-semibold leading-5">A slice of heaven</h6>
+              <p className="mb-3 text-sm text-gray-900">
+                Disrupt inspire and think tank, social entrepreneur but
+                preliminary thinking think tank compelling.
+              </p>
+            </div>
             <a
               href="/"
               aria-label=""
