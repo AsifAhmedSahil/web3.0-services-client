@@ -13,9 +13,7 @@ function App() {
     <div className='max-w-screen-xl mx-auto'>
       <Nav/>
       <Header/>
-      <Feature/>
-      <Team/>
-      <Footer/>
+      
     </div>
   );
 }
