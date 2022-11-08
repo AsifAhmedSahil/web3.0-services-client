@@ -1,5 +1,6 @@
 import { useState } from "react";
-import logo from "../../src/assets/logo1.png"
+import { Link } from "react-router-dom";
+import logo from "../../../assets/logo1.png"
 export const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -12,9 +13,9 @@ export const Nav = () => {
           title="Company"
           class="inline-flex items-center"
         >
-          <img src={logo} className="w-12" alt="" />
+          <Link to="/"><img src={logo} className="w-12" alt="" /></Link>
           <span class="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-            Company
+            Web3.0
           </span>
         </a>
         <ul class="flex items-center hidden space-x-8 lg:flex">
