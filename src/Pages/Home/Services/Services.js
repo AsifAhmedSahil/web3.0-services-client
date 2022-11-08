@@ -21,6 +21,9 @@ const Services = () => {
             services.map(service => <ServiceCard key={service._id} service={service}></ServiceCard>)
         }
     </div>
+    <div className="flex space-x-2 justify-center mt-10">
+    <button type="button" class="inline-block px-8 py-3 border-2 border-purple-600 text-purple-600 font-medium text-xl leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out ">See all!</button>
+    </div>
     </>
   )
 }
