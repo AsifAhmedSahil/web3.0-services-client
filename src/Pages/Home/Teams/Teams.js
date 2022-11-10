@@ -6,8 +6,7 @@ export const Team = () => {
             Discover Our Team
           </p>
           <p className="text-base text-gray-700 md:text-lg">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque laudantium.
+          A blockchain is a type of distributed ledger technology DLT that consists of growing list of records
           </p>
         </div>
         <div className="grid gap-10 mx-auto sm:grid-cols-2 lg:grid-cols-4 lg:max-w-screen-lg">

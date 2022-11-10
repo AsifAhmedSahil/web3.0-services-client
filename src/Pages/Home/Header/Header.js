@@ -50,17 +50,15 @@ const Header = () => {
         </div>
         <div className="max-w-xl mb-6">
           <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
-            Let us handle
+            Welcome To 
             <br className="hidden md:block" />
-            your next{' '}
+            the{' '}
             <span className="inline-block text-deep-purple-accent-400">
-              destination
+              Blockchain World
             </span>
           </h2>
           <p className="text-base text-gray-700 md:text-lg">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-            quae. explicabo.
+          A blockchain is a type of distributed ledger technology DLT that consists of growing list of records, called blocks, that are securely linked together using cryptography.Each block contains a cryptographic hash of the previous block, a timestamp, and transaction data generally represented as a Merkle tree,
           </p>
         </div>
         <div>

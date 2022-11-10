@@ -8,6 +8,7 @@ import AllServices from "../../Pages/Home/Services/AllServices";
 import SingleServices from "../../Pages/Home/Services/SingleServices";
 import Login from "../../Pages/Login/Login";
 import SignUp from "../../Pages/SignUp/SignUp";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 const router = createBrowserRouter([
     {
         path:"/",
@@ -31,7 +32,7 @@ const router = createBrowserRouter([
             },
             {
                 path:"/myreviews",
-                element:<MyReviews></MyReviews>
+                element:<PrivateRoute><MyReviews></MyReviews></PrivateRoute>
             },
             {
                 path:"/addservices",
@@ -44,7 +45,7 @@ const router = createBrowserRouter([
             {
                 path:"/services/:id",
                 element:<SingleServices/>,
-                loader:({params})=>fetch(`http://localhost:5000/services/${params.id}`)
+                loader:({params})=>fetch(`https://service-server-pearl.vercel.app/services/${params.id}`)
             },
         ]
     }

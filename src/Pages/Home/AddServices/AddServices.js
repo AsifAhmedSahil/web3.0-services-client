@@ -1,4 +1,5 @@
 import React from 'react'
+import { Navigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -11,12 +12,13 @@ const AddServices = () => {
           image: e.target.image.value
         };
         // console.log(product)
-        fetch("http://localhost:5000/addservices",{
+        fetch("https://service-server-pearl.vercel.app/addservices",{
             method:"POST",
             headers:{
                 "content-type":"application/json"
             },
             body:JSON.stringify(product)
+            
 
         }).then(res => res.json())
         .then(data =>{
@@ -24,10 +26,14 @@ const AddServices = () => {
                 console.log("successful");
                 toast.success("successfully add service")
                 e.target.reset()
+                // return <Navigate to="/allservices"></Navigate>
+                
             }
         })
         .catch(err => console.log(err))
+        
     }
+    
   return (
     <div className="py-32 px-10 min-h-screen w-full">
     <div className="bg-white p-10 md:w-3/4 lg:w-1/2 mx-auto">

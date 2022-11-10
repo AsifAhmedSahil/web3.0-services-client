@@ -1,11 +1,18 @@
 import React, { useContext } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 import useTitle from '../../hooks/useTitle';
 
 const SignUp = () => {
   useTitle("register")
   const {createUser}  =useContext(AuthContext)
+  // if(loading){
+  //   return <div class="flex justify-center items-center">
+  //   <div class="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full" role="status">
+  //     <span class="visually-hidden">Loading...</span>
+  //   </div>
+  // </div>}
+  const nevigate = useNavigate()
     const handleSignup = event =>{
         event.preventDefault();
         const form = event.target;
@@ -16,6 +23,7 @@ const SignUp = () => {
         .then(result =>{
           const user = result.user;
           console.log(user)
+          nevigate("/")
         })
         .catch(err => console.error(err))
 

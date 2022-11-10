@@ -1,24 +1,29 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../Contexts/AuthProvider/AuthProvider";
 import ServiceCard from "./ServiceCard";
 
 const Services = () => {
   const [services, setServices] = useState([]);
+  
+  
+
+  
 
   useEffect(() => {
-    fetch("http://localhost:5000/services")
+    fetch("https://service-server-pearl.vercel.app/services")
       .then((res) => res.json())
       .then((data) => setServices(data));
+      
       // console.log(services);
   }, []);
+ 
   return (
     <>
       <div className="text-center">
-        <h2 className="text-5xl font-semibold">Our Services</h2>
+        <h2 className="text-5xl font-semibold mb-10">Our Services</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere
-          impedit unde aliquid ipsam alias labore adipisci provident mollitia,
-          animi repellendus!
+          We Provide Decentralized Application, NFT Marketplace ,Blockchain Game Development ...
         </p>
       </div>
       <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">

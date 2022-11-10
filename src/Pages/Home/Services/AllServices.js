@@ -6,10 +6,10 @@ const AllServices = () => {
     const [services, setServices] = useState([]);
 
     useEffect(() => {
-      fetch("http://localhost:5000/allservices")
+      fetch("https://service-server-pearl.vercel.app/allservices")
         .then((res) => res.json())
         .then((data) => setServices(data));
-        console.log(services)
+        
     },[]);
   return (
     <div className='mb-10'>

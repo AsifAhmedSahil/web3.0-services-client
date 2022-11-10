@@ -30,7 +30,7 @@ export const Nav = () => {
         
           {
             user?.email &&
-            <ul>
+            <ul className="flex gap-6">
               <li>
             <Link
               to="/myreviews"
