@@ -1,9 +1,18 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../../assets/logo1.png"
+import { AuthContext } from "../../../Contexts/AuthProvider/AuthProvider";
 export const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const {user,logout} = useContext(AuthContext)
+
+  const handleSignOut = () =>{
+
+    logout()
+    .then(()=>{})
+    .catch(error => console.log(error))
+  }
   return (
     <div class="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
       <div class="relative flex items-center justify-between">
@@ -18,8 +27,11 @@ export const Nav = () => {
             Web3.0
           </span>
         </a>
-        <ul class="flex items-center hidden space-x-8 lg:flex">
-          <li>
+        
+          {
+            user?.email &&
+            <ul>
+              <li>
             <Link
               to="/myreviews"
               aria-label="Our product"
@@ -39,6 +51,9 @@ export const Nav = () => {
               Add Service
             </Link>
           </li>
+            </ul>
+          }
+        <ul class="flex items-center hidden space-x-8 lg:flex">
           <li>
             <Link
               to="/blogs"
@@ -60,8 +75,19 @@ export const Nav = () => {
             </a>
           </li>
         </ul>
-        <ul class="flex items-center hidden space-x-8 lg:flex">
-          <li>
+        {user?.email && <span>Welcome, {user.email}</span>}
+
+        {
+          user?.email ?
+          <button
+              onClick={handleSignOut}
+              class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-black hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+              aria-label="Sign up"
+              title="Sign up"
+            >
+              logout
+            </button> 
+            : 
             <Link
               to="/login"
               class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-black hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
@@ -70,8 +96,8 @@ export const Nav = () => {
             >
               Login
             </Link>
-          </li>
-        </ul>
+        }
+
         <div class="lg:hidden">
           <button
             aria-label="Open Menu"
