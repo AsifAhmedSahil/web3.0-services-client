@@ -1,6 +1,6 @@
 [
     {
-        "_id": "635a0c0b64a6d231228942ae",
+     
         "service_id": "04",
         "title": "dApps Development",
         "img": "https://i.ibb.co/4dfVfTk/dappsdev.png",
@@ -26,7 +26,7 @@
         ]
     },
     {
-        "_id": "635a0c0b64a6d231228942af",
+        
         "service_id": "05",
         "title": "DeFi Development",
         "img": "https://i.ibb.co/CvCD13f/R-4.jpg",
@@ -52,7 +52,7 @@
         ]
     },
     {
-        "_id": "635b591a1dafe382a9da8c96",
+        
         "service_id": "01",
         "title": "Metaverse Development",
         "img": "https://i.ibb.co/w6bBvJK/OIP-9.jpg",
@@ -78,7 +78,7 @@
         ]
     },
     {
-        "_id": "635b5afc1dafe382a9da8c98",
+        
         "service_id": "02",
         "title": "Smart Contract Development",
         "img": "https://i.ibb.co/HpqjhhC/R-5.jpg",
@@ -104,7 +104,7 @@
         ]
     },
     {
-        "_id": "635b5b691dafe382a9da8c99",
+        
         "service_id": "03",
         "title": "NFT Development",
         "img": "https://i.ibb.co/FKms5XB/R-6.jpg",
@@ -130,7 +130,7 @@
         ]
     },
     {
-        "_id": "635b5ba51dafe382a9da8c9a",
+       
         "service_id": "06",
         "title": "Web3 Game Development",
         "img": "https://i.ibb.co/GHj5LQB/OIP-10.jpg",
