@@ -2,6 +2,8 @@ import { info } from 'autoprefixer';
 import React, { useContext, useEffect, useState } from 'react'
 import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 import MyReviewCard from './MyReviewCard';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const MyReviews = () => {
     
@@ -28,11 +30,14 @@ const MyReviews = () => {
             })
             .then(res=>res.json())
             .then(data => {
+                toast("Successfully Deleted!")
                 console.log(data);
                 if(data.deletedCount > 0){
                     alert('deleted successfully');
                     const remaining = orders.filter(odr => odr._id !== id);
                     setOrders(remaining)
+                    
+
                 }
             })
             }
@@ -42,7 +47,9 @@ const MyReviews = () => {
           
   return (
     <div>
+        <ToastContainer />
         {
+            
             orders.length == 0 ? <h1>loading</h1> :
             orders.map(order=>
                 <MyReviewCard key={order._id} order={order} handleDelete={handleDelete}></MyReviewCard>
