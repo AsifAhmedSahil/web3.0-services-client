@@ -1,12 +1,12 @@
 import { GoogleAuthProvider } from "firebase/auth";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 import useTitle from "../../hooks/useTitle";
 
 const Login = () => {
   useTitle("login")
-  const {login,providerLogin} = useContext(AuthContext)
+  const {login,providerLogin,user} = useContext(AuthContext)
   
   const location = useLocation()
   const nevigate = useNavigate()
@@ -60,14 +60,7 @@ const Login = () => {
         .catch((error) => console.error(error));
     };
 
-    // if(loading){
-    //   return <div class="flex justify-center items-center">
-    //   <div class="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full" role="status">
-    //     <span class="visually-hidden">Loading...</span>
-    //   </div>
-    // </div>
-    // }
-   
+    
   return (
     <div>
       <section class="h-screen">

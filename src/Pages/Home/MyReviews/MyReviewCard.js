@@ -1,8 +1,10 @@
 import React from "react";
 
-const MyReviewCard = ({ order }) => {
+const MyReviewCard = ({ order,handleDelete }) => {
     console.log(order);
-  const { Review, image, Rating } = order;
+  const { Review, image, Rating ,_id,status } = order;
+
+ 
   return (
     <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       <div className="flex justify-center border  ">
@@ -16,6 +18,8 @@ const MyReviewCard = ({ order }) => {
             </h5>
             <p className="text-gray-700 text-base mb-4">{Review}</p>
           </div>
+          <button className="btn bg-blue-600 text-white p-2 mx-2" onClick={()=>handleDelete(_id)}>Delete</button>
+          <button className="btn bg-blue-600 text-white p-2">{status ? status : 'pending'}</button>
         </div>
       </div>
     </div>

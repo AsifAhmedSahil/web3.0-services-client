@@ -33,6 +33,7 @@ const SingleServices = () => {
       Rating: e.target.price.value,
       Email: e.target.email.value,
       image: e.target.image.value,
+      timestamp:Date.now(),
     };
     // console.log(product)
     fetch("https://service-server-pearl.vercel.app/reviews", {

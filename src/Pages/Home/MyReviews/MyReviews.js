@@ -1,3 +1,4 @@
+import { info } from 'autoprefixer';
 import React, { useContext, useEffect, useState } from 'react'
 import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 import MyReviewCard from './MyReviewCard';
@@ -6,7 +7,7 @@ const MyReviews = () => {
     
     const {user} = useContext(AuthContext)
 
-    const [orders,setOrders] = useState({})
+    const [orders,setOrders] = useState([])
     console.log(orders);
 
    
@@ -19,16 +20,38 @@ const MyReviews = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[user?.email]);
 
+    const handleDelete = id =>{
+        const proceed = window.confirm("Are You Sure?");
+            if(proceed){
+            fetch(`http://localhost:5000/reviews/${id}`,{
+                method:'DELETE'
+            })
+            .then(res=>res.json())
+            .then(data => {
+                console.log(data);
+                if(data.deletedCount > 0){
+                    alert('deleted successfully');
+                    const remaining = orders.filter(odr => odr._id !== id);
+                    setOrders(remaining)
+                }
+            })
+            }
+          }
    
+
+          
   return (
     <div>
-        {/* {orders.map((order)=>(
-            <MyReviewCard key={order._id} order={order}></MyReviewCard>
-
-        ))} */}
         {
-            orders.length
+            orders.length == 0 ? <h1>loading</h1> :
+            orders.map(order=>
+                <MyReviewCard key={order._id} order={order} handleDelete={handleDelete}></MyReviewCard>
+    
+            )
         }
+        {/* {
+            orders.length
+        } */}
     </div>
   )
 }
